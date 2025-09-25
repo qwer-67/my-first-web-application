@@ -1,0 +1,46 @@
+h1 {
+	color: #2c3e50;
+	text-align: center;
+   }
+   
+p  {
+	color: #555;
+	font-size: 28px;
+   }
+   
+
+
+p{
+	color:green;
+	font-size: 20px
+}
+
+#firstP {
+color: red;
+}
+
+.my{
+	color: yellow;
+}
+
+
+.fontSize20 {
+	font-size: 50px;
+}
+
+h2,h3 {
+	font-size: 26px;
+	color: pink;
+	}
+
+.container {
+	display: grid;
+	grid-template-column: repeat(12, 1fr);
+	gap: 10px;
+	}
+.box {
+	background: lightblue;
+	padding: 20px;
+	text-align: center;
+	}
+.col-12 { grid-columns: span 12; } /*full width */

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Student Registration Portal</title>
+  <link rel="stylesheet" href="style.Css">
+</head>
+<body>
+
+  <header>
+    <h1>Student Registration Portal</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="form-section">
+    <form>
+      <label>Full Name:</label>
+      <input type="text" required><br>
+
+      <label>Email:</label>
+      <input type="email" required><br>
+
+      <label>Password:</label>
+      <input type="password" required><br>
+
+      <label>Age:</label>
+      <input type="number"><br>
+
+      <label>Gender:</label>
+      <input type="radio" name="gender"> Male
+      <input type="radio" name="gender"> Female
+	   <input type="radio" id="admin" name="role" value="admin">
+		<lable for="admin">Admin</lable><br>  
+
+      <label>Select Courses:</label>
+      <input type="checkbox"> HTML
+      <input type="checkbox"> CSS
+      <input type="checkbox"> JavaScript<br>
+
+      <label>Date of Birth:</label>
+      <input type="date"><br>
+
+      <label>Profile Picture:</label>
+      <input type="file"><br>
+
+      <label>Country:</label>
+      <select>
+        <option>Sri Lanka</option>
+		<option>India</option>
+        <option>UK</option>
+      </select><br>
+
+      <label>Address:</label><br>
+      <textarea rows="4" cols="30"></textarea><br><br>
+
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Mohamed Rinaz ©️ 2025</p>
+  </footer>
+
+</body>
+</html>
