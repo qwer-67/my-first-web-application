@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Event Handlers</title>
+</head>
+<body>
+
+<h2>JavaScript Event Handler Examples</h2>
+
+<!-- onChange -->
+<label for="textInput">onChange:</label>
+<input type="text" id="textInput" onchange="handleChange()" />
+<br><br>
+
+<!-- onClick -->
+<button onclick="handleClick()">Click Me</button>
+<br><br>
+
+<!-- onFocus -->
+<input type="text" placeholder="Focus me" onfocus="handleFocus()" />
+<br><br>
+
+<!-- onLoad -->
+<body onload="handleLoad()">
+
+<!-- onUnload (handled in window) -->
+<script>
+  window.onunload = function() {
+    console.log("Page is being unloaded");
+  };
+</script>
+
+<!-- onMouseOut and onMouseOver -->
+<p onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
+  Hover over me!
+</p>
+
+<!-- onSelect -->
+<input type="text" value="Select this text" onselect="handleSelect()" />
+<br><br>
+
+<!-- onSubmit -->
+<form onsubmit="return handleSubmit()">
+  <input type="text" required />
+  <input type="submit" value="Submit" />
+</form>
+
+<!-- onReset -->
+<form onreset="handleReset()">
+  <input type="text" />
+  
+  <input type="reset" value="Reset" />
+</form>
+
+<script>
+  function handleChange() {
+    alert("Text changed");
+  }
+
+  function handleClick() {
+    alert("Button clicked");
+  }
+
+  function handleFocus() {
+    console.log("Input got focus");
+  }
+
+  function handleLoad() {
+    console.log("Page loaded");
+  }
+
+  function mouseOver(element) {
+    element.style.color = "red";
+  }
+
+  function mouseOut(element) {
+    element.style.color = "black";
+  }
+
+  function handleSelect() {
+    alert("Text selected");
+  }
+
+  function handleSubmit() {
+    alert("Form submitted");
+    return false; // prevent real submission
+  }
+
+  function handleReset() {
+    alert("Form reset");
+  }
+</script>
+
+</body>
+</html>
