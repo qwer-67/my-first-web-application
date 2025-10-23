@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Display Methods</title>
+</head>
+<body>
+
+<h2>Display with HTML</h2>
+<h2>JavaScript Arrays</h2>
+
+<p> Hello <p id="fName">
+<button onclick="showAlert()">Show Alert </button>
+<button onclick="showConfirm()">Show Confirm </button>
+<button onclick="showPromt()">Show Promt </button>
+<input type="button" onclick="showPropmt()" value="Show Promt">
+<input type="text" id="firstName" onchange="getInputValue()">
+<p id="pFname">
+
+<select onchange="showChange(this.value)">
+	<option value="">Select a color</option>
+	<option value="Red">Red</option>
+	<option value="Green">Green</option>
+	<option value="Blue">Blue</option>
+</select>
+
+<script>
+
+
+
+function getInputValue(){
+	let a = document.getElementById("firstName").value;
+	document.getElementById("pFname").innerHTML = a;
+}
+
+function showChange(value) {
+		alert("You selected: + value);
+}
+
+function showAlert(){
+  alert("Welcome")
+}
+
+function showConfirm(){
+  let result = confirm("Are you sure ??")
+   if(result){
+     alert("Record Deleted successfully!")
+   }else{
+         alert("Cancelled!") 
+	}
+}
+
+function showPromt(){
+	let FName = prompt("what is your name?")
+	if(FName){
+			alert("Hello" + FName + "! Welcome")
+	}else{
+			alert("Please enter your name")
+	}
+}
+
+
+
+var cars = ["Saab","Volvo,"BMW"];
+var marks = [99,78,89,75,81,92,88];
+document. write (cars [0]+"<br>");
+document, write (cars [2]) ; 
+document write ("‹br>");
+document. write ("Marks is: "+marks [2] +"<br>") ;
+document.write ("Marks is: "+marks [5]) ;
+
+
+</script>
+
+</body>
+</html>

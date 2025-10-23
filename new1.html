@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Display Methods</title>
+</head>
+<body>
+
+<h2>Display with HTML</h2>
+<h2>JavaScript Arrays</h2>
+
+<p>Hello</p>
+<p id="fName"></p>
+
+<!-- Buttons -->
+<button onclick="showAlert()">Show Alert</button>
+<button onclick="showConfirm()">Show Confirm</button>
+<button onclick="showPrompt()">Show Prompt</button>
+<input type="button" onclick="showPrompt()" value="Show Prompt">
+
+<!-- Input field -->
+<input type="text" id="firstName" onchange="getInputValue()">
+<p id="pFname"></p>
+
+<!-- Dropdown -->
+<select onchange="showChange(this.value)">
+  <option value="">Select a color</option>
+  <option value="Red">Red</option>
+  <option value="Green">Green</option>
+  <option value="Blue">Blue</option>
+</select>
+
+<script>
+// Show text input value
+function getInputValue() {
+  let a = document.getElementById("firstName").value;
+  document.getElementById("pFname").innerHTML = a;
+}
+
+// Dropdown change alert
+function showChange(value) {
+  alert("You selected: " + value);
+}
+
+// Alert
+function showAlert() {
+  alert("Welcome");
+}
+
+// Confirm box
+function showConfirm() {
+  let result = confirm("Are you sure?");
+  if (result) {
+    alert("Record Deleted successfully!");
+  } else {
+    alert("Cancelled!");
+  }
+}
+
+// Prompt
+function showPrompt() {
+  let FName = prompt("What is your name?");
+  if (FName) {
+    alert("Hello " + FName + "! Welcome");
+  } else {
+    alert("Please enter your name");
+  }
+}
+
+// Arrays display
+var cars = ["Saab", "Volvo", "BMW"];
+var marks = [99, 78, 89, 75, 81, 92, 88];
+
+document.write(cars[0] + "<br>");
+document.write(cars[2] + "<br>");
+document.write("Marks is: " + marks[2] + "<br>");
+document.write("Marks is: " + marks[5]);
+</script>
+
+</body>
+</html>
