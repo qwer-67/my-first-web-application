@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Day Offer Checker</title>
+</head>
+<body>
+
+<h2>Enter Day Number (1-7)</h2>
+
+<input type="number" id="dayInput" min="1" max="7" placeholder="1-7">
+<button onclick="checkOffer()">Check Offer</button>
+
+<p id="result"></p>
+
+<script>
+function checkOffer() {
+  let day = parseInt(document.getElementById("dayInput").value);
+  let message = "";
+
+  switch(day) {
+    case 1:
+      message = "Monday: Double points on all purchases!";
+      break;
+    case 5:
+      message = "Thursday: Student special sale 10% off extra!";
+      break;
+    case 6:
+    case 7:
+      message = "Weekend offer: Buy 1 Get 1 free on selected items!";
+      break;
+    case 2:
+    case 3:
+    case 4:
+      message = "Regular day: Thank you for shopping!";
+      break;
+    default:
+      message = "Invalid input. Please enter a number between 1 and 7.";
+  }
+
+  document.getElementById("result").innerText = message;
+}
+</script>
+
+</body>
+</html>

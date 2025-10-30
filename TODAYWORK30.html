@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discount Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    label {
+      display: inline-block;
+      width: 150px;
+      margin-bottom: 10px;
+    }
+    input, select {
+      padding: 5px;
+      width: 200px;
+      margin-bottom: 10px;
+    }
+    .row {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Discount Calculator</h2>
+
+<div class="row">
+  <label for="customerType">Customer Type:</label>
+  <select id="customerType">
+    <option value="Student">Student</option>
+    <option value="Regular">Regular</option>
+    <option value="VIP">VIP</option>
+  </select>
+</div>
+
+<div class="row">
+  <label for="amount">Enter Amount (Rs):</label>
+  <input type="number" id="amount" oninput="calculateDiscount()">
+</div>
+
+<div class="row">
+  <label for="discount">Discount (%)</label>
+  <input type="text" id="discount" readonly>
+</div>
+
+<div class="row">
+  <label for="discountValue">Discount Amount (Rs):</label>
+  <input type="text" id="discountValue" readonly>
+</div>
+
+<div class="row">
+<label for="finalAmount">Final Amount (Rs):</label>
+  <input type="text" id="finalAmount" readonly>
+</div>
+
+<script>
+function calculateDiscount() {
+  const customer = document.getElementById("customerType").value;
+  const amount = parseFloat(document.getElementById("amount").value);
+  let discount = 0;
+
+  if (isNaN(amount) || amount <= 0) {
+    document.getElementById("discount").value = "";
+    document.getElementById("discountValue").value = "";
+    document.getElementById("finalAmount").value = "";
+    return;
+  }
+
+  if (customer === "Student") {
+    if (amount > 5000) discount = 20;
+    else if (amount > 3000) discount = 10;
+    else discount = 5;
+  } else if (customer === "Regular") {
+    if (amount > 7000) discount = 15;
+    else discount = 5;
+  } else if (customer === "VIP") {
+    if (amount > 10000) discount = 25;
+    else discount = 20;
+  }
+
+  const discountAmount = (amount * discount) / 100;
+  const finalAmount = amount - discountAmount;
+
+  document.getElementById("discount").value = discount + "%";
+  document.getElementById("discountValue").value = discountAmount.toFixed(2);
+  document.getElementById("finalAmount").value = finalAmount.toFixed(2);
+}
+</script>
+
+</body>
+</html>
